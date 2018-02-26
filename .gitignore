@@ -1,0 +1,5 @@
+.vs/WebSocketServerTest/v14/.suo
+packages/*
+*.exe
+DateTimeBroadcaster/bin/*
+DateTimeBroadcaster/obj/*
