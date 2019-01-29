@@ -44,7 +44,7 @@ namespace DateTimeBroadcaster
                 {
                     try
                     {
-                        _server.Send_Internal($"Current datetime is: {DateTime.UtcNow.ToString()}.");
+                        _server.Send_Internal($"{DateTime.UtcNow.ToString("MM/dd/yyyy HH:mm:ss.ffffff")}");
                     }
                     catch (Exception ex)
                     {

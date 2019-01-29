@@ -52,11 +52,14 @@ func (p *WSClient) Connect(host string, path string, query string) bool {
 		defer close(done)
 		for {
 			_, message, err := c.ReadMessage()
+			current := time.Now() // Do it ASAP.
 			if err != nil {
 				continue
 			}
 
-			fmt.Println(string(message))
+			original, _ := time.Parse("01/02/2006 15:04:05.000000", string(message))
+
+			fmt.Println("Original: [", string(message), "], received at: [", current.UTC().Format("01/02/2006 15:04:05.000000 MST"), "], difference: [", current.UTC().Sub(original), "]")
 		}
 	}()
 
